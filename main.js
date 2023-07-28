@@ -4,6 +4,9 @@ import { updateProgressBar } from "./src/progressBar";
 import { renderStandings } from "./src/mlb_widget";
 import { initNavigation } from "./src/nav";
 import { smoothScrollTo } from "./src/smoothScroll";
+import webChatImgUrl from "./assets/imgs/webchat1.png";
+import ucChatImgUrl from "/assets/imgs/uCChat.png";
+import tagsPageImg from "/assets/imgs/tags-ui1.png";
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
@@ -219,7 +222,7 @@ document.querySelector("#app").innerHTML = `
           <div class="work-item">
             <div class="work-item__img-container">
               <img
-                src="/assets/imgs/webchat1.png"
+                src="${webChatImgUrl}"
                 alt="web chat module expanded on websites with chat log"
               />
             </div>
@@ -273,8 +276,8 @@ document.querySelector("#app").innerHTML = `
           <div class="work-item">
             <div class="work-item__img-container">
               <img
-                src="/assets/imgs/uCChat.png"
-                alt="web chat module expanded on websites with chat log"
+                src="${ucChatImgUrl}"
+                alt="uc chat in browser"
               />
             </div>
             <div class="work-item__text-container">
@@ -347,7 +350,7 @@ document.querySelector("#app").innerHTML = `
           </div>
           <div class="work-item">
             <div class="work-item__img-container">
-              <img src="/assets/imgs/tags-ui1.png" alt="tags page interface" />
+              <img src="${tagsPageImg}" alt="tags page interface" />
             </div>
             <div class="work-item__text-container">
               <h3>
