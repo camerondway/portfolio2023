@@ -508,6 +508,13 @@ header {
     }
   }
 
+  &__header-sub {
+    color: $orange;
+    font-size: 2rem;
+    font-style: italic;
+    margin: 0;
+  }
+
   &__inner-container {
     display: flex;
     justify-content: center;
@@ -570,9 +577,9 @@ header {
   &__col {
     width: 95%;
     @media screen and (min-width: $breakpoint-desktop) {
-      width: 45%;
+      width: 43%;
       &:last-of-type {
-        width: 54%;
+        width: 52%;
       }
     }
   }

@@ -10,6 +10,7 @@ function generateWorkItemLayouts(workItems) {
         <div class="work-item__inner-container">
           <div class="work-item__header">
             <h3>${workItem.name}</h3>
+            <span class="work-item__header-sub">${workItem.subname}</span>
           </div>
           <div class="work-item__col-container">
             <div class="work-item__col">
