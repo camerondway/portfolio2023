@@ -27,6 +27,9 @@ $breakpoint-tablet-portrait: 600px;
 $breakpoint-tablet-landscape: 900px;
 $breakpoint-desktop: 1200px;
 
+// BORDER
+$border-style: 3px solid $orange;
+
 /* 
    STYLES FOR BODY 
 */
@@ -481,60 +484,42 @@ header {
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
+  background: $tan;
+  color: $drkBl;
+  border-top: $border-style;
+  border-bottom: $border-style;
 
-  /* Even Work Item */
-  &:nth-child(even) {
-    & .work-item__img-container {
-      border-radius: 3px 0 0 3px;
+  &:first-of-type {
+    border-top: transparent;
+
+    & .work-item__inner-container {
+      @media screen and (min-width: $breakpoint-desktop) {
+        padding-top: 0;
+      }
     }
+  }
+
+  &__header {
+    text-align: center;
+    padding-bottom: 2rem;
+
     @media screen and (min-width: $breakpoint-desktop) {
-      flex-direction: row-reverse;
+      text-align: left;
     }
   }
-  @media screen and (min-width: $breakpoint-desktop) {
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 100px;
-  }
 
-  /* Image Container Styles */
-  &__img-container {
-    align-items: center;
-    background-color: $khaki;
-    border-radius: 0 3px 3px 0;
+  &__inner-container {
     display: flex;
-    height: auto;
     justify-content: center;
+    flex-direction: column;
+    max-width: $maxWidth;
     width: 100%;
-
-    @media screen and (min-width: $breakpoint-desktop) {
-      padding: 20px 40px 20px;
-      max-width: 40vw;
-      max-height: 870px;
-    }
-
-    & > img {
-      object-fit: cover;
-      width: 100%;
-      height: 790px;
-    }
-  }
-
-  /* Text Container Styles */
-  &__text-container {
-    color: $drkBl;
-    word-break: break-word;
-    padding: 1rem;
-
-    @media screen and (min-width: $breakpoint-desktop) {
-      padding: 0 1rem;
-      width: 60vw;
-    }
-
+    margin: 0 auto;
+    padding: 5rem 0;
     & h3 {
       color: $orange;
-      font-size: 2rem;
-      margin-top: 0;
+      font-size: 3rem;
+      margin: 1rem auto;
 
       @media screen and (min-width: $breakpoint-desktop) {
         font-size: 3rem;
@@ -544,6 +529,7 @@ header {
     & h4 {
       color: $orange;
       font-size: 2.1rem;
+      margin-top: 0;
       margin-bottom: 0;
       @media screen and (min-width: $breakpoint-desktop) {
         font-size: 2.5rem;
@@ -569,6 +555,48 @@ header {
         margin-right: 5px;
       }
     }
+  }
+
+  &__col-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    @media screen and (min-width: $breakpoint-desktop) {
+      align-items: flex-start;
+      flex-direction: row;
+    }
+  }
+  &__col {
+    width: 95%;
+    @media screen and (min-width: $breakpoint-desktop) {
+      width: 45%;
+      &:last-of-type {
+        width: 54%;
+      }
+    }
+  }
+
+  &__below-txt {
+    padding-top: 1rem;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      border-bottom: $border-style;
+    }
+  }
+}
+
+.work-item__pic {
+  width: 100%; /* Set the container width to occupy the available space */
+  padding-bottom: 75%; /* Set the height as a percentage of the width (e.g., 4:3 aspect ratio) */
+  background-size: cover; /* Scale the background image to cover the container */
+  background-position: center; /* Center the background image within the container */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .work-item__pic {
+    padding-bottom: 100%; /* Change the height percentage for a different aspect ratio on smaller screens */
   }
 }
 
@@ -685,6 +713,7 @@ header {
   &__inner-container {
     padding: 0 2rem;
     text-align: center;
+    max-width: $maxWidth;
   }
 }
 
