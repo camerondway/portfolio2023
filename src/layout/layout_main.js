@@ -172,7 +172,7 @@ export const mainLayout = `
             Sports also hold a special place in my heart, with baseball being my
             absolute favorite. As a die-hard
             <span class="dodgersText">Dodgers</span> fan, I bleed blue and
-            proudly support my team through every season.Speaking of which, I
+            proudly support my team through every season. Speaking of which, I
             will give you a quick update on the latest standings in the NL West.
             As of now, you can find the most up-to-date standings pulling from
             <a href="https://sportsdata.io/" target="_blank">sportsdata.io</a>'s
