@@ -1,0 +1,685 @@
+/* ------------------------------
+  MAIN SCSS
+------------------------------ */
+
+/* -----------
+  VARIABLES
+--------------- */
+// FONT
+$display: "Noto Serif Display";
+$merri: "Merriweather";
+
+// COLOR
+$drkBl: #272932;
+$blueGry: #93a8ac;
+$khaki: #a59e8c;
+$orange: #a1683a;
+$tan: #d7ceb2;
+$white: #fff;
+$dodgerBlue: #1e90ff;
+
+// MAX WIDTH
+$maxWidth: 1280px;
+
+// BREAKPOINTS
+$breakpoint-mobile: 599px;
+$breakpoint-tablet-portrait: 600px;
+$breakpoint-tablet-landscape: 900px;
+$breakpoint-desktop: 1200px;
+
+/* 
+   STYLES FOR BODY 
+*/
+body {
+  background: $drkBl;
+  color: $tan;
+  margin: 0;
+  font-family: $merri, serif;
+}
+
+/* 
+   STYLES FOR TEXT WITH DODGER BLUE COLOR 
+*/
+.dodgersText {
+  color: $dodgerBlue;
+}
+
+/* 
+   PROGRESS BAR STYLES 
+*/
+.progress-container {
+  width: 100%;
+  height: 5px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Ensure the progress bar is on top of other elements */
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: $blueGry;
+  width: 0;
+}
+
+/* 
+   MAIN CONTAINER STYLES 
+*/
+.main-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 10rem;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 
+   STYLES FOR NAVIGATION BAR 
+*/
+header {
+  position: sticky;
+  z-index: 9999999;
+  top: 0;
+}
+
+.nav-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  top: 1rem;
+  right: 1rem;
+
+  /* Hamburger Menu Styles */
+  & .hamburger-menu {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+  }
+
+  & .hamburger-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    &.active .line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    &.active .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.active .line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: $white;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  right: 0; /* Stick the navigation bar to the right side */
+  background-color: transparent;
+  padding: 10px;
+  display: none; /* Hide the menu by default */
+  z-index: 999999;
+  text-align: right;
+  &.active {
+    display: block;
+  }
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(165 158 140 / 70%);
+    @media screen and (min-width: $breakpoint-desktop) {
+      background-color: transparent;
+    }
+
+    & li {
+      font-size: 4rem;
+      margin: 5px 0;
+      @media screen and (min-width: $breakpoint-desktop) {
+        font-size: 7rem;
+      }
+
+      & a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          color: $khaki;
+        }
+      }
+    }
+  }
+}
+
+/* 
+   CONTAINER STYLES 
+*/
+.container {
+  padding: 20px;
+
+  /* Landing Container */
+  &__landing {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 100%;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      flex-direction: row;
+      max-width: $maxWidth;
+    }
+  }
+
+  /* About More Container */
+  &__about-more {
+    background-color: $blueGry;
+    color: $drkBl;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+  }
+
+  /* About Version 2 Container */
+  &__aboutv2 {
+    background-color: $orange;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    &-inner {
+      display: flex;
+      padding: 26px 1rem;
+      width: 100vw;
+      @media screen and (min-width: $breakpoint-desktop) {
+        padding: 10rem 1rem;
+        width: 1000px;
+      }
+    }
+  }
+
+  /* Work Container */
+  &__work {
+    background-color: $tan;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      padding-top: 26px;
+      // max-width: 2300px;
+      width: 100%;
+
+      &-header-txt {
+        @media screen and (min-width: $breakpoint-desktop) {
+          padding-left: 30rem;
+          padding-bottom: 26px;
+        }
+
+        & > h2 {
+          color: $drkBl;
+          font-family: $display, serif;
+          font-size: 5rem;
+          margin: 0;
+          @media screen and (min-width: $breakpoint-desktop) {
+            font-size: 8rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* Contact Container */
+  &__contact {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 0;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 2rem;
+    }
+    & a {
+      color: $blueGry;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* 
+   Landing Styles 
+*/
+.landing {
+  position: relative;
+
+  /* Logo Container */
+  &__logo-container {
+    max-width: 500px;
+    position: absolute;
+    right: 0vw;
+    top: 8vh;
+    width: 100%;
+    z-index: 0;
+    opacity: 0.5;
+
+    & > svg {
+      fill: $orange;
+      @media screen and (min-width: $breakpoint-desktop) {
+        animation: rotate 50s linear infinite;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      right: 12px;
+      top: 12px;
+    }
+  }
+
+  /* Text Container */
+  &__txt-container {
+    width: 100%;
+    z-index: 1;
+    @media screen and (min-width: $breakpoint-desktop) {
+      width: 1000px;
+    }
+
+    & > h1 {
+      font-family: $display, serif;
+      font-size: 7em;
+      line-height: 7rem;
+      margin: 0;
+      @media screen and (min-width: $breakpoint-desktop) {
+        /* Styles for desktops */
+        font-size: 12rem;
+        line-height: 11rem;
+      }
+    }
+  }
+
+  /* Text Container Text Color */
+  &__txt-container-text-color {
+    display: flex;
+    font-family: $display, serif;
+    font-weight: bold;
+    color: $khaki;
+    font-size: 7rem;
+    line-height: 4rem;
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 12rem;
+      line-height: 11rem;
+    }
+
+    &.bounce-letters {
+      & > .letter:nth-child(even) {
+        display: inline-block;
+        animation: bounce 0.6s alternate infinite;
+      }
+      & > .letter:nth-child(odd) {
+        display: inline-block;
+        animation: bounce 0.7s alternate infinite;
+      }
+    }
+  }
+
+  /* Sub Text */
+  &__sub-txt {
+    color: $blueGry;
+    font-size: 3rem;
+    z-index: 1;
+    @media screen and (min-width: $breakpoint-desktop) {
+      position: absolute;
+      top: 165px;
+      left: 400px;
+      width: 600px;
+    }
+  }
+}
+
+/* 
+   About Box Styles 
+*/
+.about-box {
+  background-color: $tan;
+  color: $drkBl;
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: row;
+
+  /* Last About Box */
+  &:last-of-type {
+    background-color: $khaki;
+    & > .about-box__header {
+      color: $tan;
+    }
+  }
+
+  /* Header Styles */
+  &__header {
+    color: $khaki;
+    font-family: $display, serif;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    font-size: 2.5rem;
+    letter-spacing: -14px;
+    width: 10%;
+
+    & > p {
+      margin: 0;
+    }
+  }
+
+  /* Text Container Styles */
+  &__text-container {
+    font-size: 1.5rem;
+    width: 90%;
+    line-height: 2.2rem;
+    padding: 2rem 3rem;
+  }
+
+  /* Button Container Styles */
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    & > a {
+      background: $tan;
+      color: $drkBl;
+      text-align: center;
+      text-decoration: none;
+      padding: 1rem;
+      &:hover {
+        background: $drkBl;
+        color: $tan;
+      }
+    }
+  }
+
+  /* Single About Box Styles */
+  &--single {
+    & > .about-box__text-container {
+      font-size: 2rem;
+      line-height: 3rem;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+/* 
+   Work Items Container Styles 
+*/
+.work-items-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 
+   Work Item Styles 
+*/
+.work-item {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+
+  /* Even Work Item */
+  &:nth-child(even) {
+    & .work-item__img-container {
+      border-radius: 3px 0 0 3px;
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+      flex-direction: row-reverse;
+    }
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 100px;
+  }
+
+  /* Image Container Styles */
+  &__img-container {
+    align-items: center;
+    background-color: $khaki;
+    border-radius: 0 3px 3px 0;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      padding: 20px 40px 20px;
+      max-width: 40vw;
+      max-height: 870px;
+    }
+
+    & > img {
+      object-fit: cover;
+      width: 100%;
+      height: 790px;
+    }
+  }
+
+  /* Text Container Styles */
+  &__text-container {
+    color: $drkBl;
+    word-break: break-word;
+    padding: 1rem;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      padding: 0 1rem;
+      width: 60vw;
+    }
+
+    & h3 {
+      color: $orange;
+      font-size: 2rem;
+      margin-top: 0;
+
+      @media screen and (min-width: $breakpoint-desktop) {
+        font-size: 3rem;
+      }
+    }
+
+    & h4 {
+      color: $orange;
+      font-size: 2.1rem;
+      margin-bottom: 0;
+      @media screen and (min-width: $breakpoint-desktop) {
+        font-size: 2.5rem;
+      }
+    }
+
+    & p,
+    li {
+      font-size: 1.5rem;
+    }
+
+    & ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+
+      & li:not(:last-child)::after {
+        content: ", ";
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+/* 
+   About Styles 
+*/
+.about {
+  /* Header Text Styles */
+  &__header-text {
+    margin-right: auto;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      padding-left: 30rem;
+      padding-bottom: 26px;
+    }
+    & > h2 {
+      color: $drkBl;
+      font-family: $display, serif;
+      font-size: 5rem;
+      margin: 0;
+      @media screen and (min-width: $breakpoint-desktop) {
+        font-size: 8rem;
+      }
+    }
+  }
+
+  /* Inside Container Styles */
+  &__inside-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: $maxWidth;
+    @media screen and (min-width: $breakpoint-desktop) {
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: row;
+    }
+  }
+
+  /* Bio Text Styles */
+  &__bio-txt {
+    font-size: 1.25rem;
+    margin: 0 auto;
+    word-wrap: break-word;
+    width: 90%;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      padding-right: 2rem;
+      width: 65%;
+    }
+
+    & a {
+      color: $tan;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* MLB Table Container Styles */
+  &__mlb-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  /* MLB Table Styles */
+  &__mlb-table {
+    width: 100%;
+    border-collapse: collapse;
+    & th {
+      background-color: $khaki;
+      color: #272932;
+      padding: 8px;
+      text-align: left;
+    }
+
+    & td {
+      color: #272932;
+      padding: 8px;
+    }
+
+    & tr {
+      background-color: $tan;
+
+      &:nth-child(even) {
+        background-color: $khaki;
+        color: #272932;
+      }
+    }
+
+    & tr:hover {
+      & td {
+        background-color: $white;
+
+        &:last-of-type {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+/* 
+   Contact Styles 
+*/
+.contact {
+  &__inner-container {
+    padding: 0 2rem;
+    text-align: center;
+  }
+}
+
+/* 
+   ANIMATION KEYFRAMES 
+*/
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-20px);
+  }
+}
