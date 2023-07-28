@@ -4,6 +4,7 @@ import { updateProgressBar } from "./src/progressBar";
 import { renderStandings } from "./src/mlb_widget";
 import { initNavigation } from "./src/nav";
 import { smoothScrollTo } from "./src/smoothScroll";
+import resume from "./assets/docs/cameron-way-resume-2023.pdf";
 import webChatImgUrl from "./assets/imgs/webchat1.png";
 import ucChatImgUrl from "/assets/imgs/uCChat.png";
 import tagsPageImg from "/assets/imgs/tags-ui1.png";
@@ -16,6 +17,7 @@ document.querySelector("#app").innerHTML = `
   <div class="progress-bar" id="progressBar"></div>
 </div>
 <header>
+<a class="header-resume-btn" href="${resume}" target="_blank" type="button">My Resume</a>
   <div class="nav-container">
     <div class="hamburger-menu">
       <div class="hamburger-icon">

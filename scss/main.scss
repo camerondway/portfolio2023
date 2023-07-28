@@ -173,6 +173,28 @@ header {
 }
 
 /* 
+   HEADER RESUME BUTTON STYLES 
+*/
+
+.header-resume-btn {
+  background-color: $drkBl;
+  color: $tan;
+  padding: 0.5rem 1rem;
+  border: 5px solid $tan;
+  text-decoration: none;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  &:hover {
+    background-color: $tan; /* Inverse background color */
+    color: $drkBl; /* Inverse text color */
+    border-color: $drkBl; /* Inverse border color */
+  }
+}
+
+/* 
    CONTAINER STYLES 
 */
 .container {
