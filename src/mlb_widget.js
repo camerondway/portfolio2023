@@ -1,8 +1,11 @@
-// Replace 'YOUR_API_KEY' with your actual MLB API key
+const apiOn = checkProductionDomain();
+
 const apiKey = "33d2811efda748f3bbddf6a094189602";
 const currentYear = "2023";
 // https://api.sportsdata.io/v3/mlb/scores/json/Standings/2023?key=33d2811efda748f3bbddf6a094189602
-const apiUrl = `https://api.sportsdata.io/v3/mlb/scores/json/Standings/${currentYear}?key=${apiKey}`;
+const apiUrl = apiOn
+  ? `https://api.sportsdata.io/v3/mlb/scores/json/Standings/${currentYear}?key=${apiKey}`
+  : ``;
 
 const teamColors = {
   Giants: "#F2552C",
@@ -75,5 +78,18 @@ export async function renderStandings() {
     const errorMessage = standingsBody.insertRow();
     errorMessage.innerHTML =
       '<td colspan="4">Check back later for standings and Go Dodgers!</td>';
+  }
+}
+
+// Function to check if the current page URL matches the production domain
+function checkProductionDomain() {
+  const productionDomain = "cameronway.net";
+  const currentPageURL = window.location.href;
+
+  // Check if the current page URL contains the production domain
+  if (currentPageURL.includes(productionDomain)) {
+    return true;
+  } else {
+    return false;
   }
 }
