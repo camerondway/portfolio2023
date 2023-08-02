@@ -232,7 +232,7 @@ export const mainLayout = `
           You can also find me on
           <a href="https://github.com/camerondway/" target="_blank">GitHub</a> &
           <a
-            href="https://www.linkedin.com/in/cameron-way-82006648/"
+            href="https://www.linkedin.com/in/camerondway/"
             target="_blank"
             >LinkedIn</a
           >!
