@@ -44,7 +44,7 @@ export const workItemsJson = {
         "Google WebFonts",
         "Moment.js",
         "Dropzone.js",
-        "SocketCluster JavasScript Client",
+        "SocketCluster JavaScript Client",
         "Edify APIs",
         "Giphy API",
         "Emoji Picker",
